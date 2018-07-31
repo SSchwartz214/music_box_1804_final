@@ -28,8 +28,6 @@ describe 'as a visitor' do
 
     visit genre_path(genre_1)
 
-    expect(page).to have_content("rating: #{song_1.rating}")
-    expect(page).to have_content("rating: #{song_2.rating}")
-    expect(page).to_not have_content("rating: #{song_3.rating}")
+    expect(page).to have_content("Average rating: #{genre_1.average_song_rating}")
   end
 end

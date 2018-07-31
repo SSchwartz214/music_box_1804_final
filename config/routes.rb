@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
 
+  resources :genres
+
   resources :artists, shallow: true do
     resources :songs, except: [:index], param: :slug
   end
 
   resources :songs, only: [:index]
-  
+
   resources :playlists
 
   resources :users, only: [:new, :create, :show]

@@ -3,3 +3,12 @@
 <% @genres.each do |genre| %>
   <h3><%= genre.name %><h3>
 <% end %>
+
+<% if current_admin? %>
+  <%= form_for [:admin, @genre] do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  <% end %>
+<% end %>

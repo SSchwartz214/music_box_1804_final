@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
 
-  resources :genres
+  resources :genres, only: [:index]
 
   resources :artists, shallow: true do
     resources :songs, except: [:index], param: :slug
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index]
+    resources :genres, only: [:create]
   end
 
   resources :carts, only: [:create]

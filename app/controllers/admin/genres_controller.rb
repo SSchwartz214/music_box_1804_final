@@ -5,10 +5,15 @@ class Admin::CategoriesController < Admin::BaseController
  end
 
  def create
-   # @genre = Genre.new
-   # if @genre.save
-   #   redirect_to genres_path
-   # end
+   @genre = Genre.new(genre_params)
+   if @genre.save
+     redirect_to genres_path
+   end
  end
+
+  private
+    def genre_params
+      params.require(:genre).permit(:name)
+    end
 
 end

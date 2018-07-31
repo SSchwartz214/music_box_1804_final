@@ -17,14 +17,6 @@ describe 'as a visitor' do
       expect(page).to_not have_content(song_3.title)
      end
   end
-#   As a Visitor,
-#   When I visit a genre show page,
-#     I see the average rating for all songs in this genre
-#
-# Testing requirements:
-# - I should add at least 2 songs for this genre
-# - Also include 1 or more songs NOT associated with this genre to ensure these
-#   other songs are not included in the average rating
 
   it 'shows the average rating for all songs' do
     genre_1 = Genre.create!(name: "rock")

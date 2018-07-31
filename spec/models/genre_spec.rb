@@ -5,6 +5,11 @@ describe Genre, type: :model do
     it{should validate_presence_of(:name)}
   end
 
+  describe 'relationships' do
+    it{should have_many(:genre_songs)}
+    it{should have_many(:songs).through(:genre_songs)}
+  end
+
   describe 'instance methods' do
     it '#average_song_rating' do
       genre = Genre.create!(name: "rock")

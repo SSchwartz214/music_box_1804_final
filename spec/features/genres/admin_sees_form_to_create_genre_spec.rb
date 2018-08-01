@@ -1,11 +1,3 @@
-# As an admin user,
-#   When I visit the same genre index page that visitors see,
-#   I see the same information visitors see,
-#     And I also see a form to create a new genre.
-#
-# Testing requirements:
-# - users should see at least 2 genres listed on the page
-
 require 'rails_helper'
 
 describe "Admin visits genres index page" do

@@ -1,12 +1,11 @@
-class Admin::CategoriesController < Admin::BaseController
+class Admin::GenresController < Admin::BaseController
   before_action :require_admin
-
- def new
- end
 
  def create
    @genre = Genre.new(genre_params)
    if @genre.save
+     redirect_to genres_path
+   else
      redirect_to genres_path
    end
  end
